@@ -2,25 +2,100 @@
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Hypnose thérapeutique avec Clotilde" } = Astro.props;
+const {
+  title,
+  description = "Hypnothérapeute à Douarnenez (Finistère) : accompagnement en hypnose pour l'arrêt du tabac, l'anxiété, le sommeil, les phobies, le deuil et la gestion du poids.",
+  image = "/images/clotilde.jpeg",
+} = Astro.props;
+
+// TODO — Marque à confirmer (Avelenn / CloHypno / autre). Sert au og:site_name et au JSON-LD.
+const SITE_NAME = "Avelenn";
+
+// NB : basé sur `site` dans astro.config.mjs (https://clohypno.com pour l'instant). À mettre à jour avec le domaine définitif.
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+
+// Données structurées pour le SEO local (schema.org).
+// TODO : ajouter "telephone" et "email" une fois les vraies coordonnées connues (ne pas publier de valeurs fictives).
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: SITE_NAME,
+  description,
+  url: Astro.site?.toString(),
+  image: ogImage.toString(),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "65 Rue ar Véret",
+    postalCode: "29100",
+    addressLocality: "Douarnenez",
+    addressRegion: "Bretagne",
+    addressCountry: "FR",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 48.0904, longitude: -4.3361 },
+  areaServed: "Douarnenez, Finistère",
+  priceRange: "70-80 €",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      opens: "17:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "12:00",
+    },
+  ],
+};
 ---
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="theme-color" content="#6B8E6B" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={SITE_NAME} />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Données structurées (SEO local) -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
 <body class="font-quicksand">
+  <a
+    href="#accueil"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg"
+  >
+    Aller au contenu
+  </a>
   <slot />
 
   <!-- Script AOS avec import -->

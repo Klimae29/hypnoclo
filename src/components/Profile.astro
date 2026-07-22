@@ -11,24 +11,35 @@
       <div class="w-20 h-1 bg-accent-500 mx-auto mb-8"></div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="grid lg:grid-cols-2 gap-12 items-stretch">
 
-      <!-- Photo portrait -->
-      <div class="relative" data-aos="fade-right">
-        <div class="relative z-10">
-          <div class="bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl p-8 shadow-xl">
-            <img
-              src="/images/clotilde.jpeg"
-              alt="Portrait de Clotilde, hypnothérapeute professionnelle"
-              class="w-full h-96 object-cover rounded-2xl shadow-lg"
-              loading="lazy"
-            />
+      <!-- Photo portrait + citation -->
+      <div class="flex flex-col" data-aos="fade-right">
+        <div class="relative flex-1 min-h-[24rem]">
+          <div class="relative z-10 h-full">
+            <div class="bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl p-8 shadow-xl h-full">
+              <img
+                src="/images/clotilde.jpeg"
+                alt="Portrait de Clotilde, hypnothérapeute professionnelle"
+                class="w-full h-full object-cover rounded-2xl shadow-lg"
+                loading="lazy"
+              />
+            </div>
           </div>
+
+          <!-- Éléments décoratifs -->
+          <div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-200 rounded-full opacity-30 -z-10"></div>
+          <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-accent-200 rounded-full opacity-50 -z-10"></div>
         </div>
 
-        <!-- Éléments décoratifs -->
-        <div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-200 rounded-full opacity-30 -z-10"></div>
-        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-accent-200 rounded-full opacity-50 -z-10"></div>
+        <!-- Citation -->
+        <div class="mt-8 text-center">
+          <blockquote class="text-lg italic text-primary-700 font-lora mb-4">
+            "Mon objectif est de vous accompagner avec respect et bienveillance
+            vers le changement que vous souhaitez."
+          </blockquote>
+          <p class="text-text-light font-semibold">- Clotilde</p>
+        </div>
       </div>
 
       <!-- Contenu texte -->
@@ -110,14 +121,6 @@
               </div>
 
             </div>
-          </div>
-
-          <div class="mt-6 text-center">
-            <blockquote class="text-lg italic text-primary-700 font-lora mb-4">
-              "Mon objectif est de vous accompagner avec respect et bienveillance
-              vers le changement que vous souhaitez."
-            </blockquote>
-            <p class="text-text-light font-semibold">- Clotilde</p>
           </div>
         </div>
       </div>

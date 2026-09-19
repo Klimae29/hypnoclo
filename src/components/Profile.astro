@@ -11,120 +11,116 @@
       <div class="w-20 h-1 bg-accent-500 mx-auto mb-8"></div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+    <div class="grid lg:grid-cols-3 gap-12 items-stretch">
 
-      <!-- Photo portrait + citation -->
-      <div class="flex flex-col" data-aos="fade-right">
-        <div class="relative flex-1 min-h-[24rem]">
-          <div class="relative z-10 h-full">
-            <div class="bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl p-8 shadow-xl h-full">
-              <img
-                src="/images/clotilde.jpeg"
-                alt="Portrait de Clotilde, hypnothérapeute professionnelle"
-                class="w-full h-full object-cover rounded-2xl shadow-lg"
-                loading="lazy"
-              />
-            </div>
+      <!-- Photo portrait -->
+      <div class="relative lg:col-span-1" data-aos="fade-right">
+        <div class="relative z-10 h-full">
+          <div class="bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl p-8 shadow-xl h-full">
+            <img
+              src="/images/clotilde.jpeg"
+              alt="Portrait de Clotilde, hypnothérapeute professionnelle"
+              class="w-full h-full min-h-[24rem] object-cover rounded-2xl shadow-lg"
+              loading="lazy"
+            />
           </div>
-
-          <!-- Éléments décoratifs -->
-          <div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-200 rounded-full opacity-30 -z-10"></div>
-          <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-accent-200 rounded-full opacity-50 -z-10"></div>
         </div>
 
-        <!-- Citation -->
-        <div class="mt-8 text-center">
-          <blockquote class="text-lg italic text-primary-700 font-lora mb-4">
-            "Mon objectif est de vous accompagner avec respect et bienveillance
-            vers le changement que vous souhaitez."
-          </blockquote>
-          <p class="text-text-light font-semibold">- Clotilde</p>
+        <!-- Éléments décoratifs -->
+        <div class="absolute -top-6 -right-6 w-32 h-32 bg-secondary-200 rounded-full opacity-30 -z-10"></div>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-accent-200 rounded-full opacity-50 -z-10"></div>
+      </div>
+
+      <!-- Intro, parcours, chiffres, valeurs -->
+      <div class="lg:col-span-2" data-aos="fade-left" data-aos-delay="200">
+      <p class="text-lg text-text-light mb-6 leading-relaxed">
+        Bonjour, je suis <strong class="text-primary-700">Clotilde</strong>, hypnothérapeute certifiée.
+        Passionnée par l'accompagnement thérapeutique, je me suis spécialisée dans l'hypnose
+        pour aider chacun à trouver un bien-être durable.
+      </p>
+
+      <div class="bg-primary-50 p-6 rounded-xl mb-6 border-l-4 border-primary-500">
+        <h3 class="font-lora font-bold text-primary-700 mb-3">Mon parcours :</h3>
+        <ul class="space-y-2 text-text-light">
+          <li class="flex items-start">
+            <span class="text-accent-500 mr-2">📚</span>
+           Kinésithérapeute depuis 2001
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent-500 mr-2">🎓</span>
+            Certifiée en hypnose thérapeutique auprès d'Emergences, organisme de formation certifié Qualiopi (2019).
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent-500 mr-2">🌱</span>
+            Formations complémentaires en hypnose : perte de poids durable, anxiété & sommeil, sevrage tabagique, accompagnement du deuil, et intégration par le mouvement oculaire (IMO, une technique proche de l'EMDR).
+          </li>
+
+          <li class="flex items-start">
+            <span class="text-accent-500 mr-2">💼</span>
+            Plus de 7 ans de pratique quotidienne
+          </li>
+        </ul>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-6">
+        <div class="text-center p-4 bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl">
+          <div class="text-2xl font-bold text-primary-700 mb-1">1500+</div>
+          <div class="text-sm text-text-light">Séances réalisées</div>
+        </div>
+        <div class="text-center p-4 bg-gradient-to-br from-accent-50 to-secondary-50 rounded-xl">
+          <div class="text-2xl font-bold text-primary-700 mb-1">700</div>
+          <div class="text-sm text-text-light">patients accompagnés</div>
+        </div>
+        <div class="text-center p-4 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl">
+          <div class="text-2xl font-bold text-primary-700 mb-1">7+</div>
+          <div class="text-sm text-text-light">Années d'expérience</div>
         </div>
       </div>
 
-      <!-- Contenu texte -->
-      <div data-aos="fade-left" data-aos-delay="200">
-        <div class="prose prose-lg max-w-none">
-          <p class="text-lg text-text-light mb-6 leading-relaxed">
-            Bonjour, je suis <strong class="text-primary-700">Clotilde</strong>, hypnothérapeute certifiée.
-            Passionnée par l'accompagnement thérapeutique, je me suis spécialisée dans l'hypnose
-            pour aider chacun à trouver un bien-être durable.
-          </p>
+      <div class="bg-accent-50 p-6 rounded-xl border border-accent-200">
+        <h3 class="font-lora font-bold text-primary-700 mb-3">Mes valeurs :</h3>
+        <div class="grid md:grid-cols-3 gap-4">
 
-          <div class="bg-primary-50 p-6 rounded-xl mb-6 border-l-4 border-primary-500">
-            <h3 class="font-lora font-bold text-primary-700 mb-3">Mon parcours :</h3>
-            <ul class="space-y-2 text-text-light">
-              <li class="flex items-start">
-                <span class="text-accent-500 mr-2">📚</span>
-               Kinésithérapeute depuis 2001
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 mr-2">🎓</span>
-                Certifiée en hypnose thérapeutique auprès d'Emergences, organisme de formation certifié Qualiopi (2019).
-              </li>
-              <li class="flex items-start">
-                <span class="text-accent-500 mr-2">🌱</span>
-                Formations complémentaires en hypnose : perte de poids durable, anxiété & sommeil, sevrage tabagique, accompagnement du deuil, et intégration par le mouvement oculaire (IMO, une technique proche de l'EMDR).
-              </li>
-
-              <li class="flex items-start">
-                <span class="text-accent-500 mr-2">💼</span>
-                Plus de 7 ans de pratique quotidienne
-              </li>
-            </ul>
+          <div class="text-center">
+            <div class="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-accent-500 to-secondary-500 rounded-full flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <div class="text-sm font-semibold text-primary-700">Bienveillance</div>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-4 mb-6">
-            <div class="text-center p-4 bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl">
-              <div class="text-2xl font-bold text-primary-700 mb-1">1200+</div>
-              <div class="text-sm text-text-light">Séances réalisées</div>
+          <div class="text-center">
+            <div class="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-full flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
             </div>
-            <div class="text-center p-4 bg-gradient-to-br from-accent-50 to-secondary-50 rounded-xl">
-              <div class="text-2xl font-bold text-primary-700 mb-1">600</div>
-              <div class="text-sm text-text-light">patients accompagnés</div>
-            </div>
-            <div class="text-center p-4 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl">
-              <div class="text-2xl font-bold text-primary-700 mb-1">7+</div>
-              <div class="text-sm text-text-light">Années d'expérience</div>
-            </div>
+            <div class="text-sm font-semibold text-primary-700">Écoute</div>
           </div>
 
-          <div class="bg-accent-50 p-6 rounded-xl border border-accent-200">
-            <h3 class="font-lora font-bold text-primary-700 mb-3">Mes valeurs :</h3>
-            <div class="grid md:grid-cols-3 gap-4">
-
-              <div class="text-center">
-                <div class="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-accent-500 to-secondary-500 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                  </svg>
-                </div>
-                <div class="text-sm font-semibold text-primary-700">Bienveillance</div>
-              </div>
-
-              <div class="text-center">
-                <div class="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <div class="text-sm font-semibold text-primary-700">Écoute</div>
-              </div>
-
-              <div class="text-center">
-                <div class="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <div class="text-sm font-semibold text-primary-700">Confiance</div>
-              </div>
-
+          <div class="text-center">
+            <div class="w-12 h-12 mx-auto mb-2 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
             </div>
+            <div class="text-sm font-semibold text-primary-700">Confiance</div>
           </div>
+
         </div>
       </div>
+      </div>
 
+    </div>
+
+    <!-- Citation -->
+    <div class="mt-12 text-center" data-aos="fade-up">
+      <blockquote class="text-lg italic text-primary-700 font-lora mb-4">
+        "Mon objectif est de vous accompagner avec respect et bienveillance
+        vers le changement que vous souhaitez."
+      </blockquote>
+      <p class="text-text-light font-semibold">- Clotilde</p>
     </div>
   </div>
 </section>

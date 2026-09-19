@@ -11,8 +11,7 @@ const {
   image = "/images/clotilde.jpeg",
 } = Astro.props;
 
-// TODO — Marque à confirmer (Avelenn / CloHypno / autre). Sert au og:site_name et au JSON-LD.
-const SITE_NAME = "Avelenn";
+const SITE_NAME = "Cabinet d'hypnose de Clotilde";
 
 // NB : basé sur `site` dans astro.config.mjs (https://clohypno.com pour l'instant). À mettre à jour avec le domaine définitif.
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -37,7 +36,7 @@ const jsonLd = {
   },
   geo: { "@type": "GeoCoordinates", latitude: 48.0904, longitude: -4.3361 },
   areaServed: "Douarnenez, Finistère",
-  priceRange: "70-80 €",
+  priceRange: "60-80 €",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

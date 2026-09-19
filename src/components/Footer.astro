@@ -1,0 +1,22 @@
+---
+// Footer.astro
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-primary-700 text-white py-10">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-primary-100">
+        © {year} Cabinet d'hypnose de Clotilde — Douarnenez
+      </p>
+      <div class="flex gap-6 text-sm">
+        <a href="/mentions-legales" class="text-primary-100 hover:text-white transition-colors">
+          Mentions légales
+        </a>
+        <a href="/politique-confidentialite" class="text-primary-100 hover:text-white transition-colors">
+          Politique de confidentialité
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO : remplacer par le domaine définitif une fois choisi.
-Sitemap: https://clohypno.com/sitemap.xml
+Sitemap: https://hypnoclo.fr/sitemap.xml

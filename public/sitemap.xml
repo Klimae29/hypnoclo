@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO : remplacer le domaine par le domaine définitif une fois choisi.
-     Pour un site multi-pages, préférer l'intégration @astrojs/sitemap (génération automatique). -->
+<!-- Pour un site multi-pages, préférer l'intégration @astrojs/sitemap (génération automatique). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://clohypno.com/</loc>
+    <loc>https://hypnoclo.fr/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

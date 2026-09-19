@@ -141,13 +141,14 @@
 
             <div>
               <label for="email" class="block text-primary-700 font-semibold mb-2">
-                Email *
+                Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                required
+                pattern="[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+"
+                title="Adresse email valide, ex. votre@email.com"
                 class="w-full px-4 py-2.5 border border-primary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                 placeholder="votre@email.com"
               />
@@ -166,6 +167,12 @@
                 class="w-full px-4 py-2.5 border border-primary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                 placeholder="06 52 25 17 20"
               />
+              <p id="contact-method-hint" class="text-sm text-text-light mt-2">
+                Merci de renseigner au moins l'un des deux (email ou téléphone), pour que je puisse vous répondre.
+              </p>
+              <p id="contact-method-error" class="text-sm text-red-600 mt-2 hidden">
+                Merci de renseigner un email ou un numéro de téléphone valide pour que je puisse vous répondre.
+              </p>
             </div>
 
             <div>
@@ -275,6 +282,22 @@
     }
 
     form?.addEventListener('submit', function(e) {
+      // Il faut au moins un email OU un téléphone valide pour pouvoir répondre
+      const emailField = form.querySelector('input[name="email"]');
+      const phoneField = form.querySelector('input[name="phone"]');
+      const errorMsg = document.getElementById('contact-method-error');
+
+      const hasValidEmail = emailField.value.trim() !== '' && emailField.checkValidity();
+      const hasValidPhone = phoneField.value.trim() !== '' && phoneField.checkValidity();
+
+      if (!hasValidEmail && !hasValidPhone) {
+        e.preventDefault();
+        errorMsg?.classList.remove('hidden');
+        emailField.focus();
+        return;
+      }
+      errorMsg?.classList.add('hidden');
+
       // Calculer _next dynamiquement (fonctionne en dev comme en prod,
       // quel que soit le domaine final)
       const nextField = form.querySelector('input[name="_next"]');

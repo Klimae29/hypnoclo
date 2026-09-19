@@ -40,12 +40,6 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      opens: "17:00",
-      closes: "19:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
       dayOfWeek: "Saturday",
       opens: "09:00",
       closes: "12:00",
@@ -135,6 +129,7 @@ const jsonLd = {
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-neutral);
+    overflow-x: hidden;
   }
 
   .font-lora {
@@ -147,6 +142,7 @@ const jsonLd = {
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   /* Scrollbar personnalisée */

@@ -17,7 +17,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
 
 // Données structurées pour le SEO local (schema.org).
-// TODO : ajouter "telephone" et "email" une fois les vraies coordonnées connues (ne pas publier de valeurs fictives).
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -25,6 +24,8 @@ const jsonLd = {
   description,
   url: Astro.site?.toString(),
   image: ogImage.toString(),
+  telephone: "+33652251720",
+  email: "info@hypnoclo.fr",
   address: {
     "@type": "PostalAddress",
     streetAddress: "65 Rue ar Véret",

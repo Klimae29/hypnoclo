@@ -104,6 +104,24 @@ const jsonLd = {
       offset: 100,
       delay: 100
     });
+
+    // Filet de sécurité : AOS s'appuie sur l'événement "scroll" (limité à un
+    // appel toutes les 99ms), qui peut être manqué lors d'un défilement rapide
+    // ou d'un "fling" tactile (le contenu reste alors invisible, opacity: 0).
+    // Un IntersectionObserver garantit l'affichage dès qu'un élément entre
+    // réellement dans la zone visible, quelle que soit la vitesse de défilement.
+    const aosSafetyNet = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+            aosSafetyNet.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px' }
+    );
+    document.querySelectorAll('[data-aos]').forEach((el) => aosSafetyNet.observe(el));
   </script>
 </body>
 </html>

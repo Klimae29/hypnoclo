@@ -122,21 +122,21 @@
 
 <!-- Modal pour les détails des services -->
 <div id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
-  <div class="bg-white rounded-2xl p-8 max-w-md mx-4 transform scale-95 transition-transform duration-300">
+  <div class="relative bg-white rounded-2xl p-8 max-w-md mx-4 transform scale-95 transition-transform duration-300">
+    <button id="modal-close" aria-label="Fermer" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full text-text-light hover:text-primary-700 hover:bg-primary-50 transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
     <div class="text-center">
       <div id="modal-icon" class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center shadow-lg">
         <!-- Icône dynamique -->
       </div>
       <h3 id="modal-title" class="text-2xl font-lora font-bold text-primary-700 mb-4"></h3>
       <p id="modal-description" class="text-text-light mb-6 leading-relaxed"></p>
-      <div class="flex gap-4 justify-center">
-        <button id="modal-contact" class="bg-primary-500 text-white px-6 py-3 rounded-full hover:bg-primary-600 transition-colors font-semibold">
-          Je souhaite être accompagné(e)
-        </button>
-        <button id="modal-close" class="border-2 border-primary-500 text-primary-500 px-6 py-3 rounded-full hover:bg-primary-500 hover:text-white transition-colors font-semibold">
-          Fermer
-        </button>
-      </div>
+      <button id="modal-contact" class="w-full bg-primary-500 text-white px-6 py-3 rounded-full hover:bg-primary-600 transition-colors font-semibold">
+        Je souhaite être accompagné(e)
+      </button>
     </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ export interface Props {
 
 const {
   title,
-  description = "Hypnothérapeute à Douarnenez (Finistère) : accompagnement en hypnose pour l'arrêt du tabac, l'anxiété, le sommeil, les phobies, le deuil et la gestion du poids.",
+  description = "Hypnothérapeute à Douarnenez (Finistère). Accompagnement en hypnose pour l'arrêt du tabac, l'anxiété, le sommeil, les phobies et le deuil.",
   image = "/images/clotilde.jpeg",
 } = Astro.props;
 
@@ -74,10 +74,12 @@ const jsonLd = {
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
 
-  <!-- Fonts -->
+  <!-- Fonts : chargement asynchrone pour ne pas bloquer le rendu initial -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Données structurées (SEO local) -->
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
